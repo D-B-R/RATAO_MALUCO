@@ -55,9 +55,9 @@ while not sair:                                    #loop para o jogo poder rodar
     while not morreu:                           #loop usado para verificar se o rato bateu no obstuculo que ira acasionar sua morte#
         filaEventos = pygame.event.get()
 
-        preto = things(thing_startx, thing_starty, thing_width, thing_height, AMARELO) #gerar objetos preto que tira a vida do rato#
+        amarelo = things(thing_startx, thing_starty, thing_width, thing_height, AMARELO) #gerar objetos preto que tira a vida do rato#
 
-        amarelo = things(thing_startx2, thing_starty, thing_width2, thing_height2, PRETO) #funcao para que o objeto na cor amarela almente os pontos do meu rato#
+        preto = things(thing_startx2, thing_starty, thing_width2, thing_height2, PRETO) #funcao para que o objeto na cor amarela almente os pontos do meu rato#
 
         # percorre a fila de eventos
         for evento in filaEventos:                       #verificar se minha tela esta recendo o evento de fechara tela
@@ -68,23 +68,24 @@ while not sair:                                    #loop para o jogo poder rodar
                 pos = mouse.get_pos()                    #declaracao da variavel para economizar tempo #
                 if pos[0] <= 600 and pos[1] <= 600:      #if usado para o rato se mover em determinado espaço dentro da tela#'
                     rato.mover(pos[0], pos[1])
-                    if rato.colide(preto):               # se o rato colidir com preto retorna 1 e isso faz com q o jogo acabe
+                    if rato.colide(amarelo):               # se o rato colidir com preto retorna 1 e isso faz com q o jogo acabe
                         pontos += 1                      #retorno para determinar que o rato morreu#
-                    if rato.morte(amarelo):              #se o rato estiver no amarelo#
+                    if rato.morte(preto):              #se o rato estiver no amarelo#
                         morreu = True                    #retorna verdadeiro para que se saiba que o rato continua no jogo#
 
 
 
         tela.blit(ImagemFundo, (0,0))                    # funcao usada para gerar blocos aleatoriamente
-        preto = things(thing_startx, thing_starty, thing_width, thing_height, AMARELO)
+        amarelo = things(thing_startx, thing_starty, thing_width, thing_height, AMARELO)
 
-        vermelho = things(thing_startx2, thing_starty, thing_width2, thing_height2, PRETO)
+        preto = things(thing_startx2, thing_starty, thing_width2, thing_height2, PRETO)
 
         thing_starty += thing_speed
 
         if thing_starty > ALTURA:
             thing_starty = 0 - thing_height
             thing_startx = randrange(0, LARGURA)
+            thing_startx2 = randrange(0, LARGURA)
 
         todosObjetos.draw(tela)
         tela.blit(fonte.render("Pontos: " + str(pontos), True, (AZUL)), (0, 0))
