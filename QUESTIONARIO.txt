@@ -1,0 +1,32 @@
+1. Como a herança está presente no jogo? Em qual parte (classe, linha) aparece o
+conceito de herança?
+
+R:ESTA PRESENTE POIS A CLASSE PERSONAGEM HERDA AS CARACTERISTICAS  DA CLASS SPRITE DO PYGAME
+
+PODEMOS OBSERVA ISSO NO ARQUIVO OBJETO.PY NA LINHA 5.
+
+2. Existe sobrescrita no seu código? Se sim, em qual classe e linha(s)?
+
+R: NAO SE APLICA AO MEU CODICO 
+
+3. Dê um exemplo de atributo (classe e linha em que aparece).
+
+R:CLASSE PERSONAGEM TEMOS UM EXEMPLO DE ATRIBUTO NA LINHA 9.
+
+4. Dê um exemplo de método (classe e linha em que aparece).
+
+R: CLASSE PERSONAGEM TEMOS UM METODO NA LINHA 21.
+
+5. Como encapsulamento está presente no jogo? Em qual classe e linhas?
+
+R: NAO SE APLICA AO MEU CODICO 
+
+6. Indique um local no seu código em que exista instanciação de um objeto (arquivo /
+linha).
+
+R:NO ARQUIVO MAIN.PY LINHA 30.
+
+7. Indique um local no seu código em que haja a chamada a um método (arquivo /
+linha).
+
+R: NA MAIN.PY LINHA 71.
